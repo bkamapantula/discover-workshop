@@ -5,7 +5,20 @@ We aim to index code (content) from `*.yaml` and `*.py` files. User queries are 
 
 ## How it works
 
-YAML and Python files
+1. YAML and Python files are fetched from remote repositories to local disk.
+2. Tokenization
+  - YAML
+    - We tokenize YAML values under `url` section (using `gramex.yaml` as a standard, this can be replaced with your specific format).
+    - Each YAML file forms a document (row) in the matrix.
+  - Python
+    - We tokenize all functions. In each function, we identify its name, docstring, function and method calls.
+    - Each Python file forms a document (row) in the matrix.
+  - A key mapping is created as follows: `{'application_name': {'file_name.py': 'py_file_content_as_string', ...}, ...}`
+3. These matrices are then stored on disk for lookups.
+4. For a given user query, first we create a query vector then we determine the cosine similarity between that and the document vector (matrix).
+5. Only the relevant columns (words) are highlighted. The files are then identified (using the key from cosine similarity result and a key mapping). This isn't complete yet.
+6. We want to identify the relevant code snippet for a given user query. We repeat the step 4 for the query vector and against a new document vector (specific to the file identified).
+7. We now will have the relevant code snippet.
 
 ## Overview
 
