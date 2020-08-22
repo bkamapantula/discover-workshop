@@ -1,3 +1,4 @@
+"""Utilities to process python files for indexing."""
 import dis
 import re
 from inspect import getsource
