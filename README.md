@@ -3,6 +3,11 @@ Code search utility using bag of words estimator.
 
 We aim to index code (content) from `*.yaml` and `*.py` files. User queries are then used to compared against the indexed code.
 
+## Content - ipython notebooks
+
+1. Process Python files - [process-python-modules.ipynb](https://github.com/bkamapantula/discover-workshop/blob/master/process-python-modules.ipynb)
+2. Search YAML content - [search-yaml.ipynb](https://github.com/bkamapantula/discover-workshop/blob/master/search-yaml.ipynb)
+
 ## How it works
 
 1. YAML and Python files are fetched from remote repositories to local disk.
