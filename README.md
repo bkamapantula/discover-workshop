@@ -1,5 +1,5 @@
 # Discover workshop
-Code search utility using TF-IDF (term frequency - inverse document frequency) estimator.
+This workshop material uses [Discover](https://github.com/bkamapantula/discover/), a Code search utility using TF-IDF (term frequency - inverse document frequency) estimator.
 
 We aim to index code (content) from `*.yaml` and `*.py` files. User queries are then used to compared against the indexed code.
 
