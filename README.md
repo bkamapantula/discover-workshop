@@ -6,7 +6,14 @@ We aim to index code (content) from `*.yaml` and `*.py` files. User queries are 
 ## Content - ipython notebooks
 
 1. Process Python files - [process-python-modules.ipynb](https://github.com/bkamapantula/discover-workshop/blob/master/process-python-modules.ipynb)
-2. Search YAML content - [search-yaml.ipynb](https://github.com/bkamapantula/discover-workshop/blob/master/search-yaml.ipynb)
+
+This notebook explains 
+- how to index content from `*.py` files, specifically all functions in each python file.
+- use the index to search keywords and show results (functions)
+
+2. Search YAML content - [search-yaml.ipynb](https://github.com/bkamapantula/discover-workshop/blob/master/search_yaml.ipynb)
+
+This notebook uses existing code indexes saved on disk, loads them, and performs search against it.
 
 ## How it works
 
