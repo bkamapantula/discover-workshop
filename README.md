@@ -6,6 +6,7 @@ We aim to index code (content) from `*.yaml` and `*.py` files. User queries are 
 ## Content - ipython notebooks
 
 1. Process Python files - [process-python-modules.ipynb](https://github.com/bkamapantula/discover-workshop/blob/master/process-python-modules.ipynb)
+2. Python utility - [py_utils.py](https://github.com/bkamapantula/discover-workshop/blob/master/py_utils.py)
 
 This notebook explains 
 - how to index content from `*.py` files, specifically all functions in each python file.
