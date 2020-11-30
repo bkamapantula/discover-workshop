@@ -2,6 +2,8 @@
 import dis
 import re
 from inspect import getsource
+from importlib.util import module_from_spec, spec_from_file_location
+from pathlib import Path
 
 
 def camel_case_split(identifier):
@@ -176,3 +178,34 @@ def find_functions(module):
         if callable(attr) and getattr(attr, '__module__', getattr(attr, '__class__', '')) == module.__name__:
             yield attr
 
+
+def find_modules(x):
+    """Get all python files given a path
+
+    Args:
+        x (string): file path
+
+    Returns:
+        (list): recursive list of python files including sub-directories
+    """
+    return Path(x).rglob('*.py')
+
+
+def load_module(path):
+    """For a given path fetch the python module
+
+    Args:
+        path (string): file path
+
+    Returns:
+       module (module): python module including the path
+    """
+    spec = spec_from_file_location("module.name", path)
+    module = module_from_spec(spec)
+    try:
+        spec.loader.exec_module(module)
+    except Exception as err:
+        # ToDo: Append functions found from spec.loader.get_code("module.name")
+        # To some hidden attribute of the module object to be returned.
+        warn(f'Exception when loading module {path}: \n{err}')
+    return module
